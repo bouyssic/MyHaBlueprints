@@ -23,7 +23,7 @@ blueprint:
             - integration: mqtt
               manufacturer: Aqara
               model: Opple wireless switch (single band)
-          multiple: false
+          multiple: true
     button_1_section:
       name: Actions for button 1
       icon: mdi:numeric-1-box
