@@ -24,7 +24,7 @@ blueprint:
               model: Opple wireless switch (triple band)
             - integration: mqtt
               model: Opple wireless switch (triple band) (WXCJKG13LM)
-          multiple: false
+          multiple: true
     button_1_section:
       name: Actions for button 1
       icon: mdi:numeric-1-box
