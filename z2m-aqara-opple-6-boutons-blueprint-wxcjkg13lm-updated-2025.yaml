@@ -1,0 +1,514 @@
+blueprint:
+  name: Z2M - Aqara Opple switch 3 bands (6 buttons)
+  description:
+    "Control anything you want with Aqara Opple switch 3 bands (WXCJKG13LM).
+
+    This blueprint was updated in January 2025 to stop facing the issues I had with
+    the old one.
+
+    I'm overwritting the old one as it used actions that are now long deprecated
+
+    Each band button has single, double, triple, hold & release"
+  author: Christian Bouyssi
+  homeassistant:
+    min_version: 2025.1.0
+  domain: automation
+  input:
+    device_selection:
+      name: Select the device you want to configure
+      description: Aqara switch to use
+      selector:
+        device:
+          filter:
+            - integration: mqtt
+              model: Opple wireless switch (triple band)
+            - integration: mqtt
+              model: Opple wireless switch (triple band) (WXCJKG13LM)
+          multiple: false
+    button_1_section:
+      name: Actions for button 1
+      icon: mdi:numeric-1-box
+      collapsed: true
+      input:
+        button_1_single:
+          name: Single click
+          description: Action to run on single click
+          default: []
+          selector:
+            action: {}
+        button_1_double:
+          name: Double click
+          description: Action to run on double click
+          default: []
+          selector:
+            action: {}
+        button_1_triple:
+          name: Triple click
+          description: Action to run on triple click
+          default: []
+          selector:
+            action: {}
+        button_1_hold:
+          name: Hold button
+          description: Action to run on hold
+          default: []
+          selector:
+            action: {}
+        button_1_release:
+          name: Release button
+          description: Action to run after hold then release
+          default: []
+          selector:
+            action: {}
+    button_2_section:
+      name: Actions for button 2
+      icon: mdi:numeric-2-box
+      collapsed: true
+      input:
+        button_2_single:
+          name: Single click
+          description: Action to run on single click
+          default: []
+          selector:
+            action: {}
+        button_2_double:
+          name: Double click
+          description: Action to run on double click
+          default: []
+          selector:
+            action: {}
+        button_2_triple:
+          name: Triple click
+          description: Action to run on triple click
+          default: []
+          selector:
+            action: {}
+        button_2_hold:
+          name: Hold button
+          description: Action to run on hold
+          default: []
+          selector:
+            action: {}
+        button_2_release:
+          name: Release button
+          description: Action to run after hold then release
+          default: []
+          selector:
+            action: {}
+    button_3_section:
+      name: Actions for button 3
+      icon: mdi:numeric-3-box
+      collapsed: true
+      input:
+        button_3_single:
+          name: Single click
+          description: Action to run on single click
+          default: []
+          selector:
+            action: {}
+        button_3_double:
+          name: Double click
+          description: Action to run on double click
+          default: []
+          selector:
+            action: {}
+        button_3_triple:
+          name: Triple click
+          description: Action to run on triple click
+          default: []
+          selector:
+            action: {}
+        button_3_hold:
+          name: Hold button
+          description: Action to run on hold
+          default: []
+          selector:
+            action: {}
+        button_3_release:
+          name: Release button
+          description: Action to run after hold then release
+          default: []
+          selector:
+            action: {}
+    button_4_section:
+      name: Actions for button 4
+      icon: mdi:numeric-4-box
+      collapsed: true
+      input:
+        button_4_single:
+          name: Single click
+          description: Action to run on single clic
+          default: []
+          selector:
+            action: {}
+        button_4_double:
+          name: Double click
+          description: Action to run on double click
+          default: []
+          selector:
+            action: {}
+        button_4_triple:
+          name: Triple click
+          description: Action to run on triple click
+          default: []
+          selector:
+            action: {}
+        button_4_hold:
+          name: Hold button
+          description: Action to run on hold
+          default: []
+          selector:
+            action: {}
+        button_4_release:
+          name: Release button
+          description: Action to run after hold then release
+          default: []
+          selector:
+            action: {}
+    button_5_section:
+      name: Actions for button 5
+      icon: mdi:numeric-5-box
+      collapsed: true
+      input:
+        button_5_single:
+          name: Single click
+          description: Action to run on single clic
+          default: []
+          selector:
+            action: {}
+        button_5_double:
+          name: Double click
+          description: Action to run on double click
+          default: []
+          selector:
+            action: {}
+        button_5_triple:
+          name: Triple click
+          description: Action to run on triple click
+          default: []
+          selector:
+            action: {}
+        button_5_hold:
+          name: Hold button
+          description: Action to run on hold
+          default: []
+          selector:
+            action: {}
+        button_5_release:
+          name: Release button
+          description: Action to run after hold then release
+          default: []
+          selector:
+            action: {}
+    button_6_section:
+      name: Actions for button 6
+      icon: mdi:numeric-6-box
+      collapsed: true
+      input:
+        button_6_single:
+          name: Single click
+          description: Action to run on single clic
+          default: []
+          selector:
+            action: {}
+        button_6_double:
+          name: Double click
+          description: Action to run on double click
+          default: []
+          selector:
+            action: {}
+        button_6_triple:
+          name: Triple click
+          description: Action to run on triple click
+          default: []
+          selector:
+            action: {}
+        button_6_hold:
+          name: Hold button
+          description: Action to run on hold
+          default: []
+          selector:
+            action: {}
+        button_6_release:
+          name: Release button
+          description: Action to run after hold then release
+          default: []
+          selector:
+            action: {}
+  source_url: https://community.home-assistant.io/t/z2m-aqara-opple-6-boutons-blueprint-wxcjkg13lm-updated-2025/822163
+mode: parallel
+max: 10
+max_exceeded: silent
+triggers:
+  - domain: mqtt
+    device_id: !input device_selection
+    type: action
+    subtype: button_1_single
+    trigger: device
+  - domain: mqtt
+    device_id: !input device_selection
+    type: action
+    subtype: button_1_double
+    trigger: device
+  - domain: mqtt
+    device_id: !input device_selection
+    type: action
+    subtype: button_1_triple
+    trigger: device
+  - domain: mqtt
+    device_id: !input device_selection
+    type: action
+    subtype: button_1_hold
+    trigger: device
+  - domain: mqtt
+    device_id: !input device_selection
+    type: action
+    subtype: button_1_release
+    trigger: device
+  - domain: mqtt
+    device_id: !input device_selection
+    type: action
+    subtype: button_2_single
+    trigger: device
+  - domain: mqtt
+    device_id: !input device_selection
+    type: action
+    subtype: button_2_double
+    trigger: device
+  - domain: mqtt
+    device_id: !input device_selection
+    type: action
+    subtype: button_2_triple
+    trigger: device
+  - domain: mqtt
+    device_id: !input device_selection
+    type: action
+    subtype: button_2_hold
+    trigger: device
+  - domain: mqtt
+    device_id: !input device_selection
+    type: action
+    subtype: button_2_release
+    trigger: device
+  - domain: mqtt
+    device_id: !input device_selection
+    type: action
+    subtype: button_3_single
+    trigger: device
+  - domain: mqtt
+    device_id: !input device_selection
+    type: action
+    subtype: button_3_double
+    trigger: device
+  - domain: mqtt
+    device_id: !input device_selection
+    type: action
+    subtype: button_3_triple
+    trigger: device
+  - domain: mqtt
+    device_id: !input device_selection
+    type: action
+    subtype: button_3_hold
+    trigger: device
+  - domain: mqtt
+    device_id: !input device_selection
+    type: action
+    subtype: button_3_release
+    trigger: device
+  - domain: mqtt
+    device_id: !input device_selection
+    type: action
+    subtype: button_4_single
+    trigger: device
+  - domain: mqtt
+    device_id: !input device_selection
+    type: action
+    subtype: button_4_double
+    trigger: device
+  - domain: mqtt
+    device_id: !input device_selection
+    type: action
+    subtype: button_4_triple
+    trigger: device
+  - domain: mqtt
+    device_id: !input device_selection
+    type: action
+    subtype: button_4_hold
+    trigger: device
+  - domain: mqtt
+    device_id: !input device_selection
+    type: action
+    subtype: button_4_release
+    trigger: device
+  - domain: mqtt
+    device_id: !input device_selection
+    type: action
+    subtype: button_5_single
+    trigger: device
+  - domain: mqtt
+    device_id: !input device_selection
+    type: action
+    subtype: button_5_double
+    trigger: device
+  - domain: mqtt
+    device_id: !input device_selection
+    type: action
+    subtype: button_5_triple
+    trigger: device
+  - domain: mqtt
+    device_id: !input device_selection
+    type: action
+    subtype: button_5_hold
+    trigger: device
+  - domain: mqtt
+    device_id: !input device_selection
+    type: action
+    subtype: button_5_release
+    trigger: device
+  - domain: mqtt
+    device_id: !input device_selection
+    type: action
+    subtype: button_6_single
+    trigger: device
+  - domain: mqtt
+    device_id: !input device_selection
+    type: action
+    subtype: button_6_double
+    trigger: device
+  - domain: mqtt
+    device_id: !input device_selection
+    type: action
+    subtype: button_6_triple
+    trigger: device
+  - domain: mqtt
+    device_id: !input device_selection
+    type: action
+    subtype: button_6_hold
+    trigger: device
+  - domain: mqtt
+    device_id: !input device_selection
+    type: action
+    subtype: button_6_release
+    trigger: device
+actions:
+  - choose:
+      - conditions:
+          - condition: template
+            value_template: "{{ trigger.payload == 'button_1_single' }}"
+        sequence: !input button_1_single
+      - conditions:
+          - condition: template
+            value_template: "{{ trigger.payload == 'button_1_double' }}"
+        sequence: !input button_1_double
+      - conditions:
+          - condition: template
+            value_template: "{{ trigger.payload == 'button_1_triple' }}"
+        sequence: !input button_1_triple
+      - conditions:
+          - condition: template
+            value_template: "{{ trigger.payload == 'button_1_hold' }}"
+        sequence: !input button_1_hold
+      - conditions:
+          - condition: template
+            value_template: "{{ trigger.payload == 'button_1_release' }}"
+        sequence: !input button_1_release
+      - conditions:
+          - condition: template
+            value_template: "{{ trigger.payload == 'button_2_single' }}"
+        sequence: !input button_2_single
+      - conditions:
+          - condition: template
+            value_template: "{{ trigger.payload == 'button_2_double' }}"
+        sequence: !input button_2_double
+      - conditions:
+          - condition: template
+            value_template: "{{ trigger.payload == 'button_2_triple' }}"
+        sequence: !input button_2_triple
+      - conditions:
+          - condition: template
+            value_template: "{{ trigger.payload == 'button_2_hold' }}"
+        sequence: !input button_2_hold
+      - conditions:
+          - condition: template
+            value_template: "{{ trigger.payload == 'button_2_release' }}"
+        sequence: !input button_2_release
+      - conditions:
+          - condition: template
+            value_template: "{{ trigger.payload == 'button_3_single' }}"
+        sequence: !input button_3_single
+      - conditions:
+          - condition: template
+            value_template: "{{ trigger.payload == 'button_3_double' }}"
+        sequence: !input button_3_double
+      - conditions:
+          - condition: template
+            value_template: "{{ trigger.payload == 'button_3_triple' }}"
+        sequence: !input button_3_triple
+      - conditions:
+          - condition: template
+            value_template: "{{ trigger.payload == 'button_3_hold' }}"
+        sequence: !input button_3_hold
+      - conditions:
+          - condition: template
+            value_template: "{{ trigger.payload == 'button_3_release' }}"
+        sequence: !input button_3_release
+      - conditions:
+          - condition: template
+            value_template: "{{ trigger.payload == 'button_4_single' }}"
+        sequence: !input button_4_single
+      - conditions:
+          - condition: template
+            value_template: "{{ trigger.payload == 'button_4_double' }}"
+        sequence: !input button_4_double
+      - conditions:
+          - condition: template
+            value_template: "{{ trigger.payload == 'button_4_triple' }}"
+        sequence: !input button_4_triple
+      - conditions:
+          - condition: template
+            value_template: "{{ trigger.payload == 'button_4_hold' }}"
+        sequence: !input button_4_hold
+      - conditions:
+          - condition: template
+            value_template: "{{ trigger.payload == 'button_4_release' }}"
+        sequence: !input button_4_release
+      - conditions:
+          - condition: template
+            value_template: "{{ trigger.payload == 'button_5_single' }}"
+        sequence: !input button_5_single
+      - conditions:
+          - condition: template
+            value_template: "{{ trigger.payload == 'button_5_double' }}"
+        sequence: !input button_5_double
+      - conditions:
+          - condition: template
+            value_template: "{{ trigger.payload == 'button_5_triple' }}"
+        sequence: !input button_5_triple
+      - conditions:
+          - condition: template
+            value_template: "{{ trigger.payload == 'button_5_hold' }}"
+        sequence: !input button_5_hold
+      - conditions:
+          - condition: template
+            value_template: "{{ trigger.payload == 'button_5_release' }}"
+        sequence: !input button_5_release
+      - conditions:
+          - condition: template
+            value_template: "{{ trigger.payload == 'button_6_single' }}"
+        sequence: !input button_6_single
+      - conditions:
+          - condition: template
+            value_template: "{{ trigger.payload == 'button_6_double' }}"
+        sequence: !input button_6_double
+      - conditions:
+          - condition: template
+            value_template: "{{ trigger.payload == 'button_6_triple' }}"
+        sequence: !input button_6_triple
+      - conditions:
+          - condition: template
+            value_template: "{{ trigger.payload == 'button_6_hold' }}"
+        sequence: !input button_6_hold
+      - conditions:
+          - condition: template
+            value_template: "{{ trigger.payload == 'button_6_release' }}"
+        sequence: !input button_6_release
