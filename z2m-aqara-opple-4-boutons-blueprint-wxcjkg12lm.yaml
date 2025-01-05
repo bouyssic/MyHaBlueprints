@@ -20,7 +20,6 @@ blueprint:
         device:
           filter:
           - integration: mqtt
-            manufacturer: Aqara
             model: Opple wireless switch (double band)
           multiple: true
     button_1_section:
