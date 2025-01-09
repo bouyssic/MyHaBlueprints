@@ -21,7 +21,9 @@ blueprint:
           filter:
           - integration: mqtt
             model: Opple wireless switch (double band)
-          multiple: true
+          - integration: mqtt
+            model: Opple wireless switch (double band) (WXCJKG12LM)
+          multiple: false
     button_1_section:
       name: Actions for button 1
       icon: mdi:numeric-1-box
@@ -162,9 +164,8 @@ blueprint:
           default: []
           selector:
             action: {}
-  source_url: https://community.home-assistant.io/t/z2m-aqara-opple-4-boutons-blueprint-wxcjkg12lm/279950
-mode: parallel
-max: 10
+  source_url: https://community.home-assistant.io/t/z2m-aqara-opple-4-boutons-blueprint-wxcjkg12lm-updated-2025/279950
+mode: restart
 max_exceeded: silent
 triggers:
 - domain: mqtt
