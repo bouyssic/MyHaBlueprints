@@ -1,14 +1,13 @@
 blueprint:
   name: Z2M - Aqara Opple switch 3 bands (6 buttons)
-  description:
-    "Control anything you want with Aqara Opple switch 3 bands (WXCJKG13LM).
+  description: 'Control anything you want with Aqara Opple switch 3 bands (WXCJKG13LM).
 
     This blueprint was updated in January 2025 to stop facing the issues I had with
     the old one.
 
-    I'm overwritting the old one as it used actions that are now long deprecated
+    I''m overwritting the old one as it used actions that are now long deprecated
 
-    Each band button has single, double, triple, hold & release"
+    Each band button has single, double, triple, hold & release'
   author: Christian Bouyssi
   homeassistant:
     min_version: 2025.1.0
@@ -20,11 +19,11 @@ blueprint:
       selector:
         device:
           filter:
-            - integration: mqtt
-              model: Opple wireless switch (triple band)
-            - integration: mqtt
-              model: Opple wireless switch (triple band) (WXCJKG13LM)
-          multiple: true
+          - integration: mqtt
+            model: Opple wireless switch (triple band)
+          - integration: mqtt
+            model: Opple wireless switch (triple band) (WXCJKG13LM)
+          multiple: false
     button_1_section:
       name: Actions for button 1
       icon: mdi:numeric-1-box
@@ -236,279 +235,278 @@ blueprint:
           selector:
             action: {}
   source_url: https://community.home-assistant.io/t/z2m-aqara-opple-6-boutons-blueprint-wxcjkg13lm-updated-2025/822163
-mode: parallel
-max: 10
+mode: restart
 max_exceeded: silent
 triggers:
-  - domain: mqtt
-    device_id: !input device_selection
-    type: action
-    subtype: button_1_single
-    trigger: device
-  - domain: mqtt
-    device_id: !input device_selection
-    type: action
-    subtype: button_1_double
-    trigger: device
-  - domain: mqtt
-    device_id: !input device_selection
-    type: action
-    subtype: button_1_triple
-    trigger: device
-  - domain: mqtt
-    device_id: !input device_selection
-    type: action
-    subtype: button_1_hold
-    trigger: device
-  - domain: mqtt
-    device_id: !input device_selection
-    type: action
-    subtype: button_1_release
-    trigger: device
-  - domain: mqtt
-    device_id: !input device_selection
-    type: action
-    subtype: button_2_single
-    trigger: device
-  - domain: mqtt
-    device_id: !input device_selection
-    type: action
-    subtype: button_2_double
-    trigger: device
-  - domain: mqtt
-    device_id: !input device_selection
-    type: action
-    subtype: button_2_triple
-    trigger: device
-  - domain: mqtt
-    device_id: !input device_selection
-    type: action
-    subtype: button_2_hold
-    trigger: device
-  - domain: mqtt
-    device_id: !input device_selection
-    type: action
-    subtype: button_2_release
-    trigger: device
-  - domain: mqtt
-    device_id: !input device_selection
-    type: action
-    subtype: button_3_single
-    trigger: device
-  - domain: mqtt
-    device_id: !input device_selection
-    type: action
-    subtype: button_3_double
-    trigger: device
-  - domain: mqtt
-    device_id: !input device_selection
-    type: action
-    subtype: button_3_triple
-    trigger: device
-  - domain: mqtt
-    device_id: !input device_selection
-    type: action
-    subtype: button_3_hold
-    trigger: device
-  - domain: mqtt
-    device_id: !input device_selection
-    type: action
-    subtype: button_3_release
-    trigger: device
-  - domain: mqtt
-    device_id: !input device_selection
-    type: action
-    subtype: button_4_single
-    trigger: device
-  - domain: mqtt
-    device_id: !input device_selection
-    type: action
-    subtype: button_4_double
-    trigger: device
-  - domain: mqtt
-    device_id: !input device_selection
-    type: action
-    subtype: button_4_triple
-    trigger: device
-  - domain: mqtt
-    device_id: !input device_selection
-    type: action
-    subtype: button_4_hold
-    trigger: device
-  - domain: mqtt
-    device_id: !input device_selection
-    type: action
-    subtype: button_4_release
-    trigger: device
-  - domain: mqtt
-    device_id: !input device_selection
-    type: action
-    subtype: button_5_single
-    trigger: device
-  - domain: mqtt
-    device_id: !input device_selection
-    type: action
-    subtype: button_5_double
-    trigger: device
-  - domain: mqtt
-    device_id: !input device_selection
-    type: action
-    subtype: button_5_triple
-    trigger: device
-  - domain: mqtt
-    device_id: !input device_selection
-    type: action
-    subtype: button_5_hold
-    trigger: device
-  - domain: mqtt
-    device_id: !input device_selection
-    type: action
-    subtype: button_5_release
-    trigger: device
-  - domain: mqtt
-    device_id: !input device_selection
-    type: action
-    subtype: button_6_single
-    trigger: device
-  - domain: mqtt
-    device_id: !input device_selection
-    type: action
-    subtype: button_6_double
-    trigger: device
-  - domain: mqtt
-    device_id: !input device_selection
-    type: action
-    subtype: button_6_triple
-    trigger: device
-  - domain: mqtt
-    device_id: !input device_selection
-    type: action
-    subtype: button_6_hold
-    trigger: device
-  - domain: mqtt
-    device_id: !input device_selection
-    type: action
-    subtype: button_6_release
-    trigger: device
+- domain: mqtt
+  device_id: !input device_selection
+  type: action
+  subtype: button_1_single
+  trigger: device
+- domain: mqtt
+  device_id: !input device_selection
+  type: action
+  subtype: button_1_double
+  trigger: device
+- domain: mqtt
+  device_id: !input device_selection
+  type: action
+  subtype: button_1_triple
+  trigger: device
+- domain: mqtt
+  device_id: !input device_selection
+  type: action
+  subtype: button_1_hold
+  trigger: device
+- domain: mqtt
+  device_id: !input device_selection
+  type: action
+  subtype: button_1_release
+  trigger: device
+- domain: mqtt
+  device_id: !input device_selection
+  type: action
+  subtype: button_2_single
+  trigger: device
+- domain: mqtt
+  device_id: !input device_selection
+  type: action
+  subtype: button_2_double
+  trigger: device
+- domain: mqtt
+  device_id: !input device_selection
+  type: action
+  subtype: button_2_triple
+  trigger: device
+- domain: mqtt
+  device_id: !input device_selection
+  type: action
+  subtype: button_2_hold
+  trigger: device
+- domain: mqtt
+  device_id: !input device_selection
+  type: action
+  subtype: button_2_release
+  trigger: device
+- domain: mqtt
+  device_id: !input device_selection
+  type: action
+  subtype: button_3_single
+  trigger: device
+- domain: mqtt
+  device_id: !input device_selection
+  type: action
+  subtype: button_3_double
+  trigger: device
+- domain: mqtt
+  device_id: !input device_selection
+  type: action
+  subtype: button_3_triple
+  trigger: device
+- domain: mqtt
+  device_id: !input device_selection
+  type: action
+  subtype: button_3_hold
+  trigger: device
+- domain: mqtt
+  device_id: !input device_selection
+  type: action
+  subtype: button_3_release
+  trigger: device
+- domain: mqtt
+  device_id: !input device_selection
+  type: action
+  subtype: button_4_single
+  trigger: device
+- domain: mqtt
+  device_id: !input device_selection
+  type: action
+  subtype: button_4_double
+  trigger: device
+- domain: mqtt
+  device_id: !input device_selection
+  type: action
+  subtype: button_4_triple
+  trigger: device
+- domain: mqtt
+  device_id: !input device_selection
+  type: action
+  subtype: button_4_hold
+  trigger: device
+- domain: mqtt
+  device_id: !input device_selection
+  type: action
+  subtype: button_4_release
+  trigger: device
+- domain: mqtt
+  device_id: !input device_selection
+  type: action
+  subtype: button_5_single
+  trigger: device
+- domain: mqtt
+  device_id: !input device_selection
+  type: action
+  subtype: button_5_double
+  trigger: device
+- domain: mqtt
+  device_id: !input device_selection
+  type: action
+  subtype: button_5_triple
+  trigger: device
+- domain: mqtt
+  device_id: !input device_selection
+  type: action
+  subtype: button_5_hold
+  trigger: device
+- domain: mqtt
+  device_id: !input device_selection
+  type: action
+  subtype: button_5_release
+  trigger: device
+- domain: mqtt
+  device_id: !input device_selection
+  type: action
+  subtype: button_6_single
+  trigger: device
+- domain: mqtt
+  device_id: !input device_selection
+  type: action
+  subtype: button_6_double
+  trigger: device
+- domain: mqtt
+  device_id: !input device_selection
+  type: action
+  subtype: button_6_triple
+  trigger: device
+- domain: mqtt
+  device_id: !input device_selection
+  type: action
+  subtype: button_6_hold
+  trigger: device
+- domain: mqtt
+  device_id: !input device_selection
+  type: action
+  subtype: button_6_release
+  trigger: device
 actions:
-  - choose:
-      - conditions:
-          - condition: template
-            value_template: "{{ trigger.payload == 'button_1_single' }}"
-        sequence: !input button_1_single
-      - conditions:
-          - condition: template
-            value_template: "{{ trigger.payload == 'button_1_double' }}"
-        sequence: !input button_1_double
-      - conditions:
-          - condition: template
-            value_template: "{{ trigger.payload == 'button_1_triple' }}"
-        sequence: !input button_1_triple
-      - conditions:
-          - condition: template
-            value_template: "{{ trigger.payload == 'button_1_hold' }}"
-        sequence: !input button_1_hold
-      - conditions:
-          - condition: template
-            value_template: "{{ trigger.payload == 'button_1_release' }}"
-        sequence: !input button_1_release
-      - conditions:
-          - condition: template
-            value_template: "{{ trigger.payload == 'button_2_single' }}"
-        sequence: !input button_2_single
-      - conditions:
-          - condition: template
-            value_template: "{{ trigger.payload == 'button_2_double' }}"
-        sequence: !input button_2_double
-      - conditions:
-          - condition: template
-            value_template: "{{ trigger.payload == 'button_2_triple' }}"
-        sequence: !input button_2_triple
-      - conditions:
-          - condition: template
-            value_template: "{{ trigger.payload == 'button_2_hold' }}"
-        sequence: !input button_2_hold
-      - conditions:
-          - condition: template
-            value_template: "{{ trigger.payload == 'button_2_release' }}"
-        sequence: !input button_2_release
-      - conditions:
-          - condition: template
-            value_template: "{{ trigger.payload == 'button_3_single' }}"
-        sequence: !input button_3_single
-      - conditions:
-          - condition: template
-            value_template: "{{ trigger.payload == 'button_3_double' }}"
-        sequence: !input button_3_double
-      - conditions:
-          - condition: template
-            value_template: "{{ trigger.payload == 'button_3_triple' }}"
-        sequence: !input button_3_triple
-      - conditions:
-          - condition: template
-            value_template: "{{ trigger.payload == 'button_3_hold' }}"
-        sequence: !input button_3_hold
-      - conditions:
-          - condition: template
-            value_template: "{{ trigger.payload == 'button_3_release' }}"
-        sequence: !input button_3_release
-      - conditions:
-          - condition: template
-            value_template: "{{ trigger.payload == 'button_4_single' }}"
-        sequence: !input button_4_single
-      - conditions:
-          - condition: template
-            value_template: "{{ trigger.payload == 'button_4_double' }}"
-        sequence: !input button_4_double
-      - conditions:
-          - condition: template
-            value_template: "{{ trigger.payload == 'button_4_triple' }}"
-        sequence: !input button_4_triple
-      - conditions:
-          - condition: template
-            value_template: "{{ trigger.payload == 'button_4_hold' }}"
-        sequence: !input button_4_hold
-      - conditions:
-          - condition: template
-            value_template: "{{ trigger.payload == 'button_4_release' }}"
-        sequence: !input button_4_release
-      - conditions:
-          - condition: template
-            value_template: "{{ trigger.payload == 'button_5_single' }}"
-        sequence: !input button_5_single
-      - conditions:
-          - condition: template
-            value_template: "{{ trigger.payload == 'button_5_double' }}"
-        sequence: !input button_5_double
-      - conditions:
-          - condition: template
-            value_template: "{{ trigger.payload == 'button_5_triple' }}"
-        sequence: !input button_5_triple
-      - conditions:
-          - condition: template
-            value_template: "{{ trigger.payload == 'button_5_hold' }}"
-        sequence: !input button_5_hold
-      - conditions:
-          - condition: template
-            value_template: "{{ trigger.payload == 'button_5_release' }}"
-        sequence: !input button_5_release
-      - conditions:
-          - condition: template
-            value_template: "{{ trigger.payload == 'button_6_single' }}"
-        sequence: !input button_6_single
-      - conditions:
-          - condition: template
-            value_template: "{{ trigger.payload == 'button_6_double' }}"
-        sequence: !input button_6_double
-      - conditions:
-          - condition: template
-            value_template: "{{ trigger.payload == 'button_6_triple' }}"
-        sequence: !input button_6_triple
-      - conditions:
-          - condition: template
-            value_template: "{{ trigger.payload == 'button_6_hold' }}"
-        sequence: !input button_6_hold
-      - conditions:
-          - condition: template
-            value_template: "{{ trigger.payload == 'button_6_release' }}"
-        sequence: !input button_6_release
+- choose:
+  - conditions:
+    - condition: template
+      value_template: '{{ trigger.payload == ''button_1_single'' }}'
+    sequence: !input button_1_single
+  - conditions:
+    - condition: template
+      value_template: '{{ trigger.payload == ''button_1_double'' }}'
+    sequence: !input button_1_double
+  - conditions:
+    - condition: template
+      value_template: '{{ trigger.payload == ''button_1_triple'' }}'
+    sequence: !input button_1_triple
+  - conditions:
+    - condition: template
+      value_template: '{{ trigger.payload == ''button_1_hold'' }}'
+    sequence: !input button_1_hold
+  - conditions:
+    - condition: template
+      value_template: '{{ trigger.payload == ''button_1_release'' }}'
+    sequence: !input button_1_release
+  - conditions:
+    - condition: template
+      value_template: '{{ trigger.payload == ''button_2_single'' }}'
+    sequence: !input button_2_single
+  - conditions:
+    - condition: template
+      value_template: '{{ trigger.payload == ''button_2_double'' }}'
+    sequence: !input button_2_double
+  - conditions:
+    - condition: template
+      value_template: '{{ trigger.payload == ''button_2_triple'' }}'
+    sequence: !input button_2_triple
+  - conditions:
+    - condition: template
+      value_template: '{{ trigger.payload == ''button_2_hold'' }}'
+    sequence: !input button_2_hold
+  - conditions:
+    - condition: template
+      value_template: '{{ trigger.payload == ''button_2_release'' }}'
+    sequence: !input button_2_release
+  - conditions:
+    - condition: template
+      value_template: '{{ trigger.payload == ''button_3_single'' }}'
+    sequence: !input button_3_single
+  - conditions:
+    - condition: template
+      value_template: '{{ trigger.payload == ''button_3_double'' }}'
+    sequence: !input button_3_double
+  - conditions:
+    - condition: template
+      value_template: '{{ trigger.payload == ''button_3_triple'' }}'
+    sequence: !input button_3_triple
+  - conditions:
+    - condition: template
+      value_template: '{{ trigger.payload == ''button_3_hold'' }}'
+    sequence: !input button_3_hold
+  - conditions:
+    - condition: template
+      value_template: '{{ trigger.payload == ''button_3_release'' }}'
+    sequence: !input button_3_release
+  - conditions:
+    - condition: template
+      value_template: '{{ trigger.payload == ''button_4_single'' }}'
+    sequence: !input button_4_single
+  - conditions:
+    - condition: template
+      value_template: '{{ trigger.payload == ''button_4_double'' }}'
+    sequence: !input button_4_double
+  - conditions:
+    - condition: template
+      value_template: '{{ trigger.payload == ''button_4_triple'' }}'
+    sequence: !input button_4_triple
+  - conditions:
+    - condition: template
+      value_template: '{{ trigger.payload == ''button_4_hold'' }}'
+    sequence: !input button_4_hold
+  - conditions:
+    - condition: template
+      value_template: '{{ trigger.payload == ''button_4_release'' }}'
+    sequence: !input button_4_release
+  - conditions:
+    - condition: template
+      value_template: '{{ trigger.payload == ''button_5_single'' }}'
+    sequence: !input button_5_single
+  - conditions:
+    - condition: template
+      value_template: '{{ trigger.payload == ''button_5_double'' }}'
+    sequence: !input button_5_double
+  - conditions:
+    - condition: template
+      value_template: '{{ trigger.payload == ''button_5_triple'' }}'
+    sequence: !input button_5_triple
+  - conditions:
+    - condition: template
+      value_template: '{{ trigger.payload == ''button_5_hold'' }}'
+    sequence: !input button_5_hold
+  - conditions:
+    - condition: template
+      value_template: '{{ trigger.payload == ''button_5_release'' }}'
+    sequence: !input button_5_release
+  - conditions:
+    - condition: template
+      value_template: '{{ trigger.payload == ''button_6_single'' }}'
+    sequence: !input button_6_single
+  - conditions:
+    - condition: template
+      value_template: '{{ trigger.payload == ''button_6_double'' }}'
+    sequence: !input button_6_double
+  - conditions:
+    - condition: template
+      value_template: '{{ trigger.payload == ''button_6_triple'' }}'
+    sequence: !input button_6_triple
+  - conditions:
+    - condition: template
+      value_template: '{{ trigger.payload == ''button_6_hold'' }}'
+    sequence: !input button_6_hold
+  - conditions:
+    - condition: template
+      value_template: '{{ trigger.payload == ''button_6_release'' }}'
+    sequence: !input button_6_release
