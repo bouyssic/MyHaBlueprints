@@ -1,6 +1,6 @@
 blueprint:
-  name: Z2M - Aqara Opple switch 2 bands (4 buttons)
-  description: 'Control anything you want with Aqara Opple switch 2 bands (WXCJKG12LM).
+  name: Z2M - Aqara Opple switch 3 bands (6 buttons)
+  description: 'Control anything you want with Aqara Opple switch 3 bands (WXCJKG13LM).
 
     This blueprint was updated in January 2025 to stop facing the issues I had with
     the old one.
@@ -20,9 +20,9 @@ blueprint:
         device:
           filter:
           - integration: mqtt
-            model: Opple wireless switch (double band)
+            model: Opple wireless switch (triple band)
           - integration: mqtt
-            model: Opple wireless switch (double band) (WXCJKG12LM)
+            model: Opple wireless switch (triple band) (WXCJKG13LM)
           multiple: false
     button_1_section:
       name: Actions for button 1
@@ -164,7 +164,77 @@ blueprint:
           default: []
           selector:
             action: {}
-  source_url: https://community.home-assistant.io/t/z2m-aqara-opple-4-boutons-blueprint-wxcjkg12lm-updated-2025/279950
+    button_5_section:
+      name: Actions for button 5
+      icon: mdi:numeric-5-box
+      collapsed: true
+      input:
+        button_5_single:
+          name: Single click
+          description: Action to run on single clic
+          default: []
+          selector:
+            action: {}
+        button_5_double:
+          name: Double click
+          description: Action to run on double click
+          default: []
+          selector:
+            action: {}
+        button_5_triple:
+          name: Triple click
+          description: Action to run on triple click
+          default: []
+          selector:
+            action: {}
+        button_5_hold:
+          name: Hold button
+          description: Action to run on hold
+          default: []
+          selector:
+            action: {}
+        button_5_release:
+          name: Release button
+          description: Action to run after hold then release
+          default: []
+          selector:
+            action: {}
+    button_6_section:
+      name: Actions for button 6
+      icon: mdi:numeric-6-box
+      collapsed: true
+      input:
+        button_6_single:
+          name: Single click
+          description: Action to run on single clic
+          default: []
+          selector:
+            action: {}
+        button_6_double:
+          name: Double click
+          description: Action to run on double click
+          default: []
+          selector:
+            action: {}
+        button_6_triple:
+          name: Triple click
+          description: Action to run on triple click
+          default: []
+          selector:
+            action: {}
+        button_6_hold:
+          name: Hold button
+          description: Action to run on hold
+          default: []
+          selector:
+            action: {}
+        button_6_release:
+          name: Release button
+          description: Action to run after hold then release
+          default: []
+          selector:
+            action: {}
+  source_url: https://community.home-assistant.io/t/z2m-aqara-opple-6-boutons-blueprint-wxcjkg13lm-updated-2025/822163
 mode: restart
 max_exceeded: silent
 triggers:
@@ -268,6 +338,56 @@ triggers:
   type: action
   subtype: button_4_release
   trigger: device
+- domain: mqtt
+  device_id: !input device_selection
+  type: action
+  subtype: button_5_single
+  trigger: device
+- domain: mqtt
+  device_id: !input device_selection
+  type: action
+  subtype: button_5_double
+  trigger: device
+- domain: mqtt
+  device_id: !input device_selection
+  type: action
+  subtype: button_5_triple
+  trigger: device
+- domain: mqtt
+  device_id: !input device_selection
+  type: action
+  subtype: button_5_hold
+  trigger: device
+- domain: mqtt
+  device_id: !input device_selection
+  type: action
+  subtype: button_5_release
+  trigger: device
+- domain: mqtt
+  device_id: !input device_selection
+  type: action
+  subtype: button_6_single
+  trigger: device
+- domain: mqtt
+  device_id: !input device_selection
+  type: action
+  subtype: button_6_double
+  trigger: device
+- domain: mqtt
+  device_id: !input device_selection
+  type: action
+  subtype: button_6_triple
+  trigger: device
+- domain: mqtt
+  device_id: !input device_selection
+  type: action
+  subtype: button_6_hold
+  trigger: device
+- domain: mqtt
+  device_id: !input device_selection
+  type: action
+  subtype: button_6_release
+  trigger: device
 actions:
 - choose:
   - conditions:
@@ -350,3 +470,43 @@ actions:
     - condition: template
       value_template: '{{ trigger.payload == ''button_4_release'' }}'
     sequence: !input button_4_release
+  - conditions:
+    - condition: template
+      value_template: '{{ trigger.payload == ''button_5_single'' }}'
+    sequence: !input button_5_single
+  - conditions:
+    - condition: template
+      value_template: '{{ trigger.payload == ''button_5_double'' }}'
+    sequence: !input button_5_double
+  - conditions:
+    - condition: template
+      value_template: '{{ trigger.payload == ''button_5_triple'' }}'
+    sequence: !input button_5_triple
+  - conditions:
+    - condition: template
+      value_template: '{{ trigger.payload == ''button_5_hold'' }}'
+    sequence: !input button_5_hold
+  - conditions:
+    - condition: template
+      value_template: '{{ trigger.payload == ''button_5_release'' }}'
+    sequence: !input button_5_release
+  - conditions:
+    - condition: template
+      value_template: '{{ trigger.payload == ''button_6_single'' }}'
+    sequence: !input button_6_single
+  - conditions:
+    - condition: template
+      value_template: '{{ trigger.payload == ''button_6_double'' }}'
+    sequence: !input button_6_double
+  - conditions:
+    - condition: template
+      value_template: '{{ trigger.payload == ''button_6_triple'' }}'
+    sequence: !input button_6_triple
+  - conditions:
+    - condition: template
+      value_template: '{{ trigger.payload == ''button_6_hold'' }}'
+    sequence: !input button_6_hold
+  - conditions:
+    - condition: template
+      value_template: '{{ trigger.payload == ''button_6_release'' }}'
+    sequence: !input button_6_release
